@@ -8,6 +8,10 @@ spring:
     username: ${DB_USER:dev_user}
     password: ${DB_PASSWORD:dev_password}
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
   jpa:
     hibernate:
       ddl-auto: none
@@ -19,3 +23,27 @@ spring:
           batch_size: 20
         order_inserts: true
         order_updates: true
+    open-in-view: false
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: api-seed-consumer-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    topics:
+      product-events: product-events
+
+opensearch:
+  host: localhost
+  port: 9200
+  scheme: http
+  username: admin
+  password: admin
+  index:
+    products: products

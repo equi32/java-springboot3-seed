@@ -56,6 +56,9 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
     annotationProcessor("org.projectlombok:lombok-mapstruct-binding:0.2.0")
 
+    //Kafka
+    implementation("org.springframework.kafka:spring-kafka:3.3.1")
+
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 

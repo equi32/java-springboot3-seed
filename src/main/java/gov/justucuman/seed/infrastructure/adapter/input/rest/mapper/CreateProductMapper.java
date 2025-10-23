@@ -16,10 +16,14 @@ public interface CreateProductMapper {
     @Mappings({
             @Mapping(target = "id", ignore = true),
             @Mapping(target = "createdAt", ignore = true),
-            @Mapping(target = "updatedAt", ignore = true)
+            @Mapping(target = "updatedAt", ignore = true),
+            @Mapping(target = "withId", ignore = true)
     })
     Product toDomain(CreateProductRequest request);
     ProductResponse toResponse(Product product);
     ProductEntity toEntity(Product product);
+    @Mappings({
+            @Mapping(target = "withId", ignore = true)
+    })
     Product toDomain(ProductEntity product);
 }
