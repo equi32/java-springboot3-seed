@@ -6,8 +6,6 @@ import gov.justucuman.seed.infrastructure.adapter.input.rest.dto.CreateProductRe
 import gov.justucuman.seed.infrastructure.adapter.input.rest.dto.ProductResponse;
 import gov.justucuman.seed.infrastructure.adapter.input.rest.mapper.CreateProductMapper;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

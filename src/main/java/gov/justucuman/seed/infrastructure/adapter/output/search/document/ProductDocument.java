@@ -1,11 +1,10 @@
-package gov.justucuman.seed.infrastructure.adapter.output.event.dto;
+package gov.justucuman.seed.infrastructure.adapter.output.search.document;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public record ProductEvent(
-        String type,
+public record ProductDocument(
         UUID id,
         String name,
         String description,

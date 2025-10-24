@@ -59,6 +59,11 @@ dependencies {
     //Kafka
     implementation("org.springframework.kafka:spring-kafka:3.3.1")
 
+    //OpenSearch
+    implementation("org.opensearch.client:opensearch-java:3.2.0")
+//    implementation("org.opensearch.client:opensearch-rest-client:3.3.1")
+//    implementation("org.apache.httpcomponents.client5:httpclient5:5.4.1")
+
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 

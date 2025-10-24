@@ -30,8 +30,10 @@ public class ProductKafkaPublisherAdapter implements ProductEventPublisherPort {
                 "PRODUCT_CREATED",
                 product.id(),
                 product.name(),
+                product.description(),
                 product.price(),
                 product.stock(),
+                product.status() != null ? product.status().name() : null,
                 LocalDateTime.now()
         );
     }

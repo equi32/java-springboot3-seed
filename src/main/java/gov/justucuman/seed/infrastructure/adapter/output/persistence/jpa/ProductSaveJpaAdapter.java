@@ -2,9 +2,9 @@ package gov.justucuman.seed.infrastructure.adapter.output.persistence.jpa;
 
 import gov.justucuman.seed.domain.model.Product;
 import gov.justucuman.seed.domain.port.out.ProductSavePort;
+import gov.justucuman.seed.infrastructure.adapter.input.rest.mapper.CreateProductMapper;
 import gov.justucuman.seed.infrastructure.adapter.output.persistence.jpa.entity.ProductEntity;
 import gov.justucuman.seed.infrastructure.adapter.output.persistence.jpa.repository.JpaProductRepository;
-import gov.justucuman.seed.infrastructure.adapter.input.rest.mapper.CreateProductMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
