@@ -47,3 +47,10 @@ opensearch:
   password: admin
   index:
     products: products
+
+external:
+  api:
+    product:
+      base-url: https://fakestoreapi.com
+      timeout: 5000
+      retry-attempts: 3

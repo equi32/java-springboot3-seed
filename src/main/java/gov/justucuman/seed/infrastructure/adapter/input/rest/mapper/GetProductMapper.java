@@ -8,8 +8,9 @@ import org.mapstruct.factory.Mappers;
 import java.util.List;
 
 @Mapper
-public interface GetAllProductMapper {
-    GetAllProductMapper INSTANCE = Mappers.getMapper(GetAllProductMapper.class);
+public interface GetProductMapper {
+    GetProductMapper INSTANCE = Mappers.getMapper(GetProductMapper.class);
 
+    ProductResponse toResponse(Product product);
     List<ProductResponse> toResponse(List<Product> product);
 }

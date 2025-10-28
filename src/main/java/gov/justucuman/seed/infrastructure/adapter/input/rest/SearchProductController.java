@@ -2,7 +2,7 @@ package gov.justucuman.seed.infrastructure.adapter.input.rest;
 
 import gov.justucuman.seed.domain.port.in.SearchProduct;
 import gov.justucuman.seed.infrastructure.adapter.input.rest.dto.ProductResponse;
-import gov.justucuman.seed.infrastructure.adapter.input.rest.mapper.GetAllProductMapper;
+import gov.justucuman.seed.infrastructure.adapter.input.rest.mapper.GetProductMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -28,7 +28,7 @@ public class SearchProductController {
     @GetMapping("/search")
     public ResponseEntity<List<ProductResponse>> perform(@RequestParam String term, @RequestParam String value) {
         log.info("GET /api/v1/products/search with term {}={}", term, value);
-        List<ProductResponse> response = GetAllProductMapper.INSTANCE.toResponse(searchProduct.perform(term, value));
+        List<ProductResponse> response = GetProductMapper.INSTANCE.toResponse(searchProduct.perform(term, value));
         return ResponseEntity.ok(response);
     }
 }

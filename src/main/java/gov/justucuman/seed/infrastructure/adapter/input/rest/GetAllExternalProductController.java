@@ -1,6 +1,7 @@
 package gov.justucuman.seed.infrastructure.adapter.input.rest;
 
-import gov.justucuman.seed.domain.port.in.GetAllProduct;
+import gov.justucuman.seed.domain.model.Product;
+import gov.justucuman.seed.domain.port.in.GetAllExternalProduct;
 import gov.justucuman.seed.infrastructure.adapter.input.rest.dto.ProductResponse;
 import gov.justucuman.seed.infrastructure.adapter.input.rest.mapper.GetProductMapper;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,18 +17,18 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/v1/products")
-@Tag(name = "Products", description = "Product getAll API")
+@RequestMapping("/api/v1/products/external")
+@Tag(name = "External Products", description = "External Product gets API")
 @RequiredArgsConstructor
-public class GetAllProductController {
+public class GetAllExternalProductController {
 
-    private final GetAllProduct getAllProduct;
+    private final GetAllExternalProduct getAllExternalProduct;
     
-    @Operation(summary = "Get all products")
+    @Operation(summary = "Get all External Products")
     @GetMapping
     public ResponseEntity<List<ProductResponse>> perform() {
-        log.info("GET /api/v1/products");
-        List<ProductResponse> response = GetProductMapper.INSTANCE.toResponse(getAllProduct.perform());
-        return ResponseEntity.ok(response);
+        log.info("GET /api/v1/products/external");
+        List<Product> products = getAllExternalProduct.perform();
+        return ResponseEntity.ok(GetProductMapper.INSTANCE.toResponse(products));
     }
 }

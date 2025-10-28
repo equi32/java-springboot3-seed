@@ -16,6 +16,8 @@ public interface ProductDocumentMapper {
     ProductDocument toDocument(Product product);
 
     @Mapping(target = "status", source = "status", qualifiedByName = "stringToStatus")
+    @Mapping(target = "updatedAt", ignore = true)
+    @Mapping(target = "withId", ignore = true)
     Product toDomain(ProductDocument document);
     
     @Named("stringToStatus")
